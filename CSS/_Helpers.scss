@@ -1,0 +1,124 @@
+/* ---- Variables ---- */
+
+$mainColor: #EF3F3F;
+$fontColor: #CCCDD1;
+$bgColor: #2B3345;
+$btnColor: linear-gradient(#ff6363, #b32c2c);
+
+$xsScreen: 576px;
+$sScreen: 786px;
+$mdScreen: 992px;
+$lgScreen: 1200px;
+
+/* ---- Mixins ---- */
+
+@mixin prefixer($prefixes: (), $prob, $value) {
+    @each $prefix in $prefixes {
+        #{$prefix + $prob} : $value;
+    } #{$prob} : $value;
+}
+
+/* ---------- Classes ---------*/
+
+/* Discount label */
+.discount {
+    position: absolute;
+    top: 0px; left: 0px;
+    height: 30px; width: 50px;
+    border-radius: 5px 0px;
+    background-color: $mainColor;
+    color: white;
+}
+
+/* Save & preview btns */
+.save, .preview {
+    position: absolute;
+    width: 30px;
+    top: 35%;
+    height: 30px;
+    padding: 4px;
+    border-radius: 50%;
+    background-color: white;
+    cursor: pointer;
+    transition: all .5s ease;
+    opacity: 0;
+    &:hover {
+        background-color: $mainColor;
+        color: white;
+    }
+    &.active {
+        background-color: $mainColor;
+        color: white;
+    }
+}
+
+.save {
+    left: 35%;
+}
+
+.preview {
+    left: 50%;
+}
+
+/* Rate list */
+.rate {
+    list-style: none;
+    display: flex;
+    padding: 0px;
+    justify-content: center;
+    color: #ffb100;
+    margin: 0px;
+}
+
+/* Price of Items */
+.price {
+    color: $mainColor;
+}
+
+.price::before {
+    content: '$';
+}
+
+.oldPrice {
+    color: gray;
+    text-decoration: line-through;
+    font-size: .9em;
+}
+
+/* Offer Counter */
+.counter {
+    list-style: none;
+    padding: 0px;
+    li {
+        background-color: #ecebeb;
+        border: 1px solid gray;
+        display: inline-block;
+        height: 50px;
+        width: 22.5%;
+        border-radius: 5px;
+        font-size: 0.7em;
+        span {
+            display: block;
+            font-size: 1.4em;
+            font-weight: 500;
+        }
+    }
+}
+
+/* Add to cart Btn */
+.Add {
+    padding: 15px;
+    border: 1px solid darkgray;
+    border-radius: 20px;
+    outline: none!important;
+    font-size: .8em;
+    background-color: white;
+    transition: all 0.5s ease;
+    &:hover {
+        background-image: $btnColor;
+        color: white;
+    }
+}
+
+
+
